@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOIR — Music</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <span>●</span> NOIR
+    </div>
+
+    <nav>
+      <a class="active" href="#">
+        <span>⌂</span> Home
+      </a>
+
+      <a href="#songs">
+        <span>♫</span> Songs
+      </a>
+
+      <a href="#albums">
+        <span>▣</span> Albums
+      </a>
+
+      <a href="#artists">
+        <span>♬</span> Artists
+      </a>
+    </nav>
+
+    <div class="playlist">
+      <p>YOUR LIBRARY</p>
+
+      <a href="#">Recently Played</a>
+      <a href="#">Liked Songs</a>
+      <a href="#">My Playlist</a>
+    </div>
+
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <header class="topbar">
+
+      <div class="arrows">
+        <button>‹</button>
+        <button>›</button>
+      </div>
+
+      <div class="search">
+        <span>⌕</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search songs, artists..."
+        >
+      </div>
+
+      <button class="profile">P</button>
+
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="hero-text">
+
+        <p class="small-title">YOUR MUSIC EXPERIENCE</p>
+
+        <h1>Feel the<br><span>Sound.</span></h1>
+
+        <p class="description">
+          Discover music that matches your mood.
+          Listen. Feel. Repeat.
+        </p>
+
+        <button class="primary-btn" onclick="playCurrent()">
+          ▶ Play Music
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Recently Played -->
+    <section id="songs">
+
+      <div class="section-title">
+        <h2>Recently Played</h2>
+        <a href="#">See all</a>
+      </div>
+
+      <div class="song-grid" id="songGrid">
+
+        <article class="song-card"
+          data-title="After Dark"
+          data-artist="Mr. Kitty"
+          data-src="music/song1.mp3"
+          data-cover="images/cover1.jpg">
+
+          <div class="cover">
+            <img src="images/cover1.jpg" alt="After Dark">
+
+            <button class="card-play"
+              onclick="playSongFromCard(this)">
+              ▶
+            </button>
+          </div>
+
+          <h3>After Dark</h3>
+          <p>Mr. Kitty</p>
+
+        </article>
+
+
+        <article class="song-card"
+          data-title="Midnight City"
+          data-artist="M83"
+          data-src="music/song2.mp3"
+          data-cover="images/cover2.jpg">
+
+          <div class="cover">
+            <img src="images/cover2.jpg" alt="Midnight City">
+
+            <button class="card-play"
+              onclick="playSongFromCard(this)">
+              ▶
+            </button>
+          </div>
+
+          <h3>Midnight City</h3>
+          <p>M83</p>
+
+        </article>
+
+
+        <article class="song-card"
+          data-title="The Night We Met"
+          data-artist="Lord Huron"
+          data-src="music/song3.mp3"
+          data-cover="images/cover3.jpg">
+
+          <div class="cover">
+            <img src="images/cover3.jpg" alt="The Night We Met">
+
+            <button class="card-play"
+              onclick="playSongFromCard(this)">
+              ▶
+            </button>
+          </div>
+
+          <h3>The Night We Met</h3>
+          <p>Lord Huron</p>
+
+        </article>
+
+
+        <article class="song-card"
+          data-title="Space Song"
+          data-artist="Beach House"
+          data-src="music/song4.mp3"
+          data-cover="images/cover4.jpg">
+
+          <div class="cover">
+            <img src="images/cover4.jpg" alt="Space Song">
+
+            <button class="card-play"
+              onclick="playSongFromCard(this)">
+              ▶
+            </button>
+          </div>
+
+          <h3>Space Song</h3>
+          <p>Beach House</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Albums -->
+    <section id="albums">
+
+      <div class="section-title">
+        <h2>Made For You</h2>
+        <a href="#">See all</a>
+      </div>
+
+      <div class="album-row">
+
+        <div class="album">
+          <img src="images/cover5.jpg" alt="">
+          <h3>Late Night Vibes</h3>
+          <p>Dark • Chill • Ambient</p>
+        </div>
+
+        <div class="album">
+          <img src="images/cover6.jpg" alt="">
+          <h3>Midnight Dreams</h3>
+          <p>Dreamy • Emotional</p>
+        </div>
+
+        <div class="album">
+          <img src="images/cover7.jpg" alt="">
+          <h3>After Hours</h3>
+          <p>Electronic • Night</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Artists -->
+    <section id="artists">
+
+      <div class="section-title">
+        <h2>Popular Artists</h2>
+      </div>
+
+      <div class="artists">
+
+        <div class="artist">
+          <img src="images/artist1.jpg" alt="">
+          <h3>Artist One</h3>
+          <p>Artist</p>
+        </div>
+
+        <div class="artist">
+          <img src="images/artist2.jpg" alt="">
+          <h3>Artist Two</h3>
+          <p>Artist</p>
+        </div>
+
+        <div class="artist">
+          <img src="images/artist3.jpg" alt="">
+          <h3>Artist Three</h3>
+          <p>Artist</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Bottom Music Player -->
+  <footer class="player">
+
+    <div class="now-playing">
+
+      <img id="playerCover"
+        src="images/cover1.jpg"
+        alt="">
+
+      <div>
+        <h4 id="playerTitle">After Dark</h4>
+        <p id="playerArtist">Mr. Kitty</p>
+      </div>
+
+      <button id="likeBtn">♡</button>
+
+    </div>
+
+
+    <div class="player-center">
+
+      <div class="controls">
+
+        <button onclick="previousSong()">⏮</button>
+
+        <button
+          class="play-button"
+          id="playBtn"
+          onclick="togglePlay()">
+          ▶
+        </button>
+
+        <button onclick="nextSong()">⏭</button>
+
+      </div>
+
+
+      <div class="progress-container">
+
+        <span id="currentTime">0:00</span>
+
+        <input
+          type="range"
+          id="progress"
+          min="0"
+          max="100"
+          value="0"
+        >
+
+        <span id="duration">0:00</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="volume">
+
+      <span>🔊</span>
+
+      <input
+        type="range"
+        id="volume"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.8"
+      >
+
+    </div>
+
+  </footer>
+
+
+  <audio id="audio"></audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
